@@ -23,7 +23,7 @@ npm i -g @webacp/agent
 | [`@webacp/tools-fs`](https://www.npmjs.com/package/@webacp/tools-fs) | [0.1.2](https://www.npmjs.com/package/@webacp/tools-fs) | Built-in `runtime: 'local'` filesystem + shell pack. |
 | [`@webacp/uploads`](https://www.npmjs.com/package/@webacp/uploads) | [0.1.2](https://www.npmjs.com/package/@webacp/uploads) | Upload store and hydration helpers for attachments. |
 | [`@webacp/server`](https://www.npmjs.com/package/@webacp/server) | [0.1.2](https://www.npmjs.com/package/@webacp/server) | Framework-agnostic server core: `createWebacpServer()`, dual MCP hosts, pairing, chat SSE, threads. Hono adapter. |
-| [`@webacp/agent`](https://www.npmjs.com/package/@webacp/agent) | [0.1.2](https://www.npmjs.com/package/@webacp/agent) | Local daemon as a library: `createLocalAgent({ toolPacks })` + `webacp-agent` bin. |
+| [`@webacp/agent`](https://www.npmjs.com/package/@webacp/agent) | [0.1.3](https://www.npmjs.com/package/@webacp/agent) | Local daemon as a library: `createLocalAgent({ toolPacks })` + `webacp-agent` bin. |
 | [`@webacp/persistence`](https://www.npmjs.com/package/@webacp/persistence) | [0.1.2](https://www.npmjs.com/package/@webacp/persistence) | Thread/message store interface + SQLite (`bun:sqlite`) and in-memory adapters. |
 | [`@webacp/react`](https://www.npmjs.com/package/@webacp/react) | [0.1.2](https://www.npmjs.com/package/@webacp/react) | Headless hooks: `useChat`, `useThreads`, `useAgentStatus`, `useModelSelector`. |
 | [`@webacp/ui`](https://www.npmjs.com/package/@webacp/ui) | [0.1.2](https://www.npmjs.com/package/@webacp/ui) | Themed chat UI on shadcn-compatible CSS variables + Tailwind. Drop-in `WebacpChat` or compose primitives. |

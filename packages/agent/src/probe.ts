@@ -1,9 +1,16 @@
 import { spawn } from 'node:child_process';
+import { existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { AcpProviderId, ProviderProbe } from '@webacp/protocol';
 
-const WORKER = join(dirname(fileURLToPath(import.meta.url)), 'probe-worker.ts');
+function probeWorkerPath(): string {
+  const dir = dirname(fileURLToPath(import.meta.url));
+  const js = join(dir, 'probe-worker.js');
+  return existsSync(js) ? js : join(dir, 'probe-worker.ts');
+}
+
+const WORKER = probeWorkerPath();
 const PROBE_TIMEOUT_MS = 90_000;
 
 function runProbeWorker(providerId?: AcpProviderId): Promise<ProviderProbe[]> {
