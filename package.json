@@ -11,6 +11,7 @@
     "agent:update": "webacp-agent update",
     "build": "bun run --filter '@webacp/*' build",
     "build:libs": "bun run --filter './packages/*' build",
+    "publish:libs": "bash scripts/publish-packages.sh",
     "typecheck": "bun run --filter '*' typecheck",
     "probe:sessions": "python3 scripts/probe-cli-sessions.py"
   }

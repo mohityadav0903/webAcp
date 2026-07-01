@@ -31,7 +31,6 @@
         "@webacp/server": "workspace:*",
         "@webacp/tools-fs": "workspace:*",
         "@webacp/ui": "workspace:*",
-        "@webacp/uploads": "workspace:*",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
         "react-router-dom": "^7.18.0",
@@ -69,11 +68,15 @@
     },
     "packages/agent": {
       "name": "@webacp/agent",
-      "version": "0.0.1",
+      "version": "0.1.0",
+      "bin": {
+        "webacp-agent": "./bin/webacp-agent.js",
+      },
       "dependencies": {
         "@webacp/core": "workspace:*",
         "@webacp/protocol": "workspace:*",
         "@webacp/tools": "workspace:*",
+        "@webacp/tools-fs": "workspace:*",
         "cursor-acp-enriched": "^0.4.0",
         "ws": "^8.18.1",
       },
@@ -86,7 +89,7 @@
     },
     "packages/core": {
       "name": "@webacp/core",
-      "version": "0.0.1",
+      "version": "0.1.0",
       "dependencies": {
         "@agentclientprotocol/sdk": "^0.25.1",
         "@webacp/protocol": "workspace:*",
@@ -98,7 +101,7 @@
     },
     "packages/persistence": {
       "name": "@webacp/persistence",
-      "version": "0.0.1",
+      "version": "0.1.0",
       "dependencies": {
         "@webacp/protocol": "workspace:*",
       },
@@ -109,7 +112,7 @@
     },
     "packages/protocol": {
       "name": "@webacp/protocol",
-      "version": "0.0.1",
+      "version": "0.1.0",
       "dependencies": {
         "zod": "^3.24.2",
       },
@@ -119,7 +122,7 @@
     },
     "packages/react": {
       "name": "@webacp/react",
-      "version": "0.0.1",
+      "version": "0.1.0",
       "dependencies": {
         "@webacp/protocol": "workspace:*",
       },
@@ -136,13 +139,12 @@
     },
     "packages/server": {
       "name": "@webacp/server",
-      "version": "0.0.1",
+      "version": "0.1.0",
       "dependencies": {
         "@webacp/core": "workspace:*",
         "@webacp/persistence": "workspace:*",
         "@webacp/protocol": "workspace:*",
         "@webacp/tools": "workspace:*",
-        "@webacp/uploads": "workspace:*",
         "hono": "^4.7.5",
       },
       "devDependencies": {
@@ -153,7 +155,7 @@
     },
     "packages/tools": {
       "name": "@webacp/tools",
-      "version": "0.0.1",
+      "version": "0.1.0",
       "dependencies": {
         "@modelcontextprotocol/sdk": "^1.29.0",
         "zod": "^3.24.2",
@@ -164,7 +166,7 @@
     },
     "packages/tools-fs": {
       "name": "@webacp/tools-fs",
-      "version": "0.0.1",
+      "version": "0.1.0",
       "dependencies": {
         "@webacp/tools": "workspace:*",
         "zod": "^3.24.2",
@@ -176,7 +178,7 @@
     },
     "packages/ui": {
       "name": "@webacp/ui",
-      "version": "0.0.1",
+      "version": "0.1.0",
       "dependencies": {
         "@radix-ui/react-collapsible": "^1.1.14",
         "@radix-ui/react-scroll-area": "^1.2.12",
@@ -201,7 +203,7 @@
     },
     "packages/uploads": {
       "name": "@webacp/uploads",
-      "version": "0.0.1",
+      "version": "0.1.0",
       "dependencies": {
         "@webacp/protocol": "workspace:*",
         "@webacp/tools": "workspace:*",

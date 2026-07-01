@@ -1,12 +1,12 @@
 {
-  "name": "@webacp/persistence",
+  "name": "@webacp/uploads",
   "version": "0.1.0",
-  "description": "Thread and message persistence adapters for WebACP (SQLite + in-memory).",
+  "description": "Upload store and hydration helpers for WebACP attachments.",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mohityadav0903/webAcp.git",
-    "directory": "packages/persistence"
+    "directory": "packages/uploads"
   },
   "publishConfig": {
     "access": "public"
@@ -27,10 +27,12 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@webacp/protocol": "workspace:*"
+    "@webacp/protocol": "workspace:*",
+    "@webacp/tools": "workspace:*",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
-    "@types/bun": "^1.2.4",
+    "@types/node": "^22.13.10",
     "typescript": "^5.8.2"
   }
 }
