@@ -1,0 +1,17 @@
+{
+  "name": "webacp",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*", "examples/*"],
+  "scripts": {
+    "dev": "bun run --filter @webacp/web dev",
+    "dev:agent": "bun run --filter @webacp/local-agent dev",
+    "dev:all": "bun run dev & bun run dev:agent",
+    "install:agent": "bash scripts/install-agent.sh",
+    "agent:status": "webacp-agent status",
+    "agent:update": "webacp-agent update",
+    "build": "bun run --filter '@webacp/*' build",
+    "build:libs": "bun run --filter './packages/*' build",
+    "typecheck": "bun run --filter '*' typecheck",
+    "probe:sessions": "python3 scripts/probe-cli-sessions.py"
+  }
+}
