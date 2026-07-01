@@ -1,6 +1,6 @@
 {
   "name": "@webacp/ui",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Themed WebACP chat UI components (shadcn-compatible CSS variables).",
   "license": "MIT",
   "repository": {

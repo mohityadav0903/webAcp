@@ -1,6 +1,6 @@
 {
   "name": "@webacp/server",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Framework-agnostic WebACP server: Hono adapter, MCP hosts, pairing, chat SSE.",
   "license": "MIT",
   "repository": {

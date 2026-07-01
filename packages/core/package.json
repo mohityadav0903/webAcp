@@ -1,6 +1,6 @@
 {
   "name": "@webacp/core",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "ACP engine for WebACP: providers, sessions, prompt adapter.",
   "license": "MIT",
   "repository": {

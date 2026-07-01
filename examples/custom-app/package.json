@@ -6,7 +6,8 @@
   "scripts": {
     "server": "bun run server.ts",
     "agent": "bun run agent.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "pair-token": "curl -s http://127.0.0.1:4000/api/pairing/token"
   },
   "dependencies": {
     "@webacp/agent": "workspace:*",

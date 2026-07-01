@@ -1,6 +1,6 @@
 {
   "name": "@webacp/react",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Headless React hooks and store for WebACP chat apps.",
   "license": "MIT",
   "repository": {

@@ -1,6 +1,6 @@
 {
   "name": "@webacp/agent",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Local WebACP agent daemon and webacp-agent CLI.",
   "license": "MIT",
   "repository": {
@@ -15,7 +15,7 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": {
-    "webacp-agent": "./bin/webacp-agent.js"
+    "webacp-agent": "bin/webacp-agent.js"
   },
   "exports": {
     ".": {

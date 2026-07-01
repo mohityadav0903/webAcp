@@ -1,6 +1,6 @@
 {
   "name": "@webacp/uploads",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Upload store and hydration helpers for WebACP attachments.",
   "license": "MIT",
   "repository": {

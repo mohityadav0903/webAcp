@@ -1,6 +1,6 @@
 {
   "name": "@webacp/persistence",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Thread and message persistence adapters for WebACP (SQLite + in-memory).",
   "license": "MIT",
   "repository": {

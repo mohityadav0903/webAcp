@@ -1,6 +1,6 @@
 {
   "name": "@webacp/tools-fs",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Local filesystem and shell tool pack for WebACP agents.",
   "license": "MIT",
   "repository": {

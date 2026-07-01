@@ -4,22 +4,29 @@ A TypeScript-first SDK for building MCP/ACP chat apps — bring your own CLI age
 (Claude, Cursor, Codex, Gemini, …), define your own tools, and route execution
 between your server and the user's machine.
 
-Think "LangChain for MCP + ACP": the `@webacp/*` packages are the product; the
+Think "LangChain for MCP + ACP": the [`@webacp/*`](https://www.npmjs.com/org/webacp) packages are the product; the
 `apps/` are a reference implementation built on top of them.
+
+```bash
+npm i @webacp/server @webacp/agent @webacp/tools-fs @webacp/persistence
+# CLI (global)
+npm i -g @webacp/agent
+```
 
 ## Packages
 
-| Package | Purpose |
-|---------|---------|
-| `@webacp/protocol` | JSON wire contracts (pairing, chat events, generic `tool.call`/`tool.result`). Language-neutral. |
-| `@webacp/core` | ACP engine: provider presets, connect/spawn, event adapter, persistent per-thread session manager + model selection. |
-| `@webacp/tools` | Tool SDK: `defineTool` / `defineToolPack` (`runtime: 'server' \| 'local'`) + MCP exposer. |
-| `@webacp/tools-fs` | Built-in `runtime: 'local'` filesystem + shell pack. |
-| `@webacp/server` | Framework-agnostic server core: `createWebacpServer()`, dual MCP hosts, pairing, chat SSE, threads. Hono adapter. |
-| `@webacp/agent` | Local daemon as a library: `createLocalAgent({ toolPacks })` + `webacp-agent` bin. |
-| `@webacp/persistence` | Thread/message store interface + SQLite (`bun:sqlite`) and in-memory adapters. |
-| `@webacp/react` | Headless hooks: `useChat`, `useThreads`, `useAgentStatus`, `useModelSelector`. |
-| `@webacp/ui` | Themed chat UI on shadcn-compatible CSS variables + Tailwind. Drop-in `WebacpChat` or compose primitives. |
+| Package | npm | Purpose |
+|---------|-----|---------|
+| [`@webacp/protocol`](https://www.npmjs.com/package/@webacp/protocol) | [0.1.2](https://www.npmjs.com/package/@webacp/protocol) | JSON wire contracts (pairing, chat events, generic `tool.call`/`tool.result`). Language-neutral. |
+| [`@webacp/core`](https://www.npmjs.com/package/@webacp/core) | [0.1.2](https://www.npmjs.com/package/@webacp/core) | ACP engine: provider presets, connect/spawn, event adapter, persistent per-thread session manager + model selection. |
+| [`@webacp/tools`](https://www.npmjs.com/package/@webacp/tools) | [0.1.2](https://www.npmjs.com/package/@webacp/tools) | Tool SDK: `defineTool` / `defineToolPack` (`runtime: 'server' \| 'local'`) + MCP exposer. |
+| [`@webacp/tools-fs`](https://www.npmjs.com/package/@webacp/tools-fs) | [0.1.2](https://www.npmjs.com/package/@webacp/tools-fs) | Built-in `runtime: 'local'` filesystem + shell pack. |
+| [`@webacp/uploads`](https://www.npmjs.com/package/@webacp/uploads) | [0.1.2](https://www.npmjs.com/package/@webacp/uploads) | Upload store and hydration helpers for attachments. |
+| [`@webacp/server`](https://www.npmjs.com/package/@webacp/server) | [0.1.2](https://www.npmjs.com/package/@webacp/server) | Framework-agnostic server core: `createWebacpServer()`, dual MCP hosts, pairing, chat SSE, threads. Hono adapter. |
+| [`@webacp/agent`](https://www.npmjs.com/package/@webacp/agent) | [0.1.2](https://www.npmjs.com/package/@webacp/agent) | Local daemon as a library: `createLocalAgent({ toolPacks })` + `webacp-agent` bin. |
+| [`@webacp/persistence`](https://www.npmjs.com/package/@webacp/persistence) | [0.1.2](https://www.npmjs.com/package/@webacp/persistence) | Thread/message store interface + SQLite (`bun:sqlite`) and in-memory adapters. |
+| [`@webacp/react`](https://www.npmjs.com/package/@webacp/react) | [0.1.2](https://www.npmjs.com/package/@webacp/react) | Headless hooks: `useChat`, `useThreads`, `useAgentStatus`, `useModelSelector`. |
+| [`@webacp/ui`](https://www.npmjs.com/package/@webacp/ui) | [0.1.2](https://www.npmjs.com/package/@webacp/ui) | Themed chat UI on shadcn-compatible CSS variables + Tailwind. Drop-in `WebacpChat` or compose primitives. |
 
 ## Theming (rebrand with CSS variables)
 
@@ -94,7 +101,14 @@ import { fsPack } from '@webacp/tools-fs';
 createLocalAgent({ toolPacks: [fsPack] }).start();
 ```
 
-A complete runnable example lives in [`examples/custom-app`](examples/custom-app).
+A complete runnable example lives in [`examples/custom-app`](examples/custom-app) (server + agent, no UI).
+
+```bash
+cd examples/custom-app
+bun run server          # :4000
+curl http://127.0.0.1:4000/api/pairing/token   # get pair token
+WEBACP_WEB_URL=http://127.0.0.1:4000 WEBACP_PAIR_TOKEN=<token> bun run agent
+```
 
 ## Reference app (dev)
 
@@ -136,6 +150,7 @@ Prerequisites: [Bun](https://bun.sh) ≥ 1.0, an ACP CLI agent, and its auth
 | `webacp-agent update` | Pull latest and restart service |
 | `bun run typecheck` | Typecheck every workspace package |
 | `bun run build:libs` | Build all `@webacp/*` libraries to `dist/` |
+| `bun run publish:libs` | Publish all `@webacp/*` packages to npm (uses `bun publish`) |
 
 ## Env
 

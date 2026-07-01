@@ -1,6 +1,6 @@
 {
   "name": "@webacp/tools",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Tool SDK for WebACP: defineTool packs and MCP server builder.",
   "license": "MIT",
   "repository": {
